@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PapeleriaBellasArtes.BL
 {
-    public class Contexto: DbContext
+    public class Contexto: DbContext //DBcontext es una funcion del EntityFramework
     {
         public Contexto(): base(@"Data Source=(LocalDb)\MSSQLLocalDB;AttachDBFilename=" +
             Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\PapeleriaBellasArtesDB.mdf")
@@ -24,5 +24,10 @@ namespace PapeleriaBellasArtes.BL
 
         public DbSet<Producto> Productos { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Cliente> Clientes { get; set; }
+
+        public DbSet<Orden> Ordenes { get; set; }
+        public DbSet<OrdenDetalle> OrdenDetalle { get; set; }
+
     }
 }
